@@ -1,0 +1,186 @@
+$color-base: #17317f;
+$color-white: #ffffff;
+$color-grey: #d4d4d4;
+$color-yellow: #fedd07;
+
+body {
+  font-size: 16px;
+}
+
+.page {
+  width: 100%;
+}
+
+.list-page {
+  background-image: url("assets/images/background.png");
+
+  .page-layout {
+    padding: 100px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 70px;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  &-option {
+    $container-height: 50px;
+
+    width: 220px;
+    height: $container-height;
+    padding: 0 20px;
+    color: $color-base;
+    background-color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: $container-height;
+    cursor: pointer;
+    
+
+    &-selected {
+      color: $color-white;
+      background-color: $color-base;
+
+      .faicon {
+        color: $color-white !important;
+      }
+    }
+
+    &:not(&-selected):hover {
+      background-color: #d6e7fe;
+    }
+
+    .icon-wrapper {
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .faicon {
+        height: 20px;
+        color: $color-grey;
+      }
+    }
+  }
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  $text-padding-x: 20px;
+
+  background-color: $color-white;
+  text-align: left;
+  width: 800px;
+
+  .card-info-wrapper {
+    display: flex;
+
+    .image-wrapper {
+      position: relative;
+    
+      .image-container {
+        display: block;
+        width: 500px;
+        min-height: 280px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    
+      .toggle-button {
+        width: 220px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .card-info {
+      padding: 20px;
+      font-size: 14px;
+      line-height: 1.5;
+      flex-grow: 1;
+
+      &-name {
+        color: $color-base;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      &-location {
+        color: #aaaaaa;
+      }
+
+      &-rate {
+        margin: 5px 0;
+
+        .faicon {
+          color: $color-yellow;
+        }
+      }
+
+      &-button {
+        margin-top: 10px;
+        padding: 10px 0;
+        color: $color-base;
+        background-color: $color-yellow;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 6px;
+        line-height: 1.2;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: #fecf07;
+        }
+
+        &-price {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  
+  .toggle-button {
+    $container-height: 32px;
+  
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    padding: 0 $text-padding-x;
+    height: $container-height;
+    line-height: $container-height;
+    background-color: $color-white;
+    color: $color-base;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &-description {
+    padding: 26px $text-padding-x;
+
+    &-header {
+      font-size: 18px;
+      margin-bottom: 16px;
+      font-weight: bold;
+      color: $color-base;
+    }
+  }
+}
+
